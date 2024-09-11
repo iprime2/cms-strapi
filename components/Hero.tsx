@@ -23,6 +23,7 @@ export const Hero:React.FC =  () => {
     try {
         const res = await axios.get("https://sparkling-kindness-41d0c1b2d5.strapiapp.com/api/dashboards?populate=*");
         setDashboard(res.data.data);
+        // @ts-expect-error
         const temp = res.data.data.find((item) => item.attributes.slug === type);
         setSelectedData(temp?.attributes);
     } catch (error) {
@@ -32,7 +33,9 @@ export const Hero:React.FC =  () => {
   }
 
   const updateContent = () => {
-    const temp = dashboard.find((item) => item.attributes.slug === type);
+        // @ts-expect-error
+        const temp = dashboard.find((item) => item.attributes.slug === type);
+        // @ts-expect-error
     setSelectedData(temp?.attributes);
   }
 
@@ -56,14 +59,17 @@ export const Hero:React.FC =  () => {
           <div className="relative w-[650px] flex items-center justify-center">
               {/* Circular Background with text */}
               <div className="absolute w-80 h-80 bg-rose-700 rounded-full opacity-70 flex flex-col justify-center items-center text-left text-white px-6 z-30 transform -translate-x-[150px]">
+                {/* @ts-expect-error */}  
                 <h3 className="text-xl font-bold mb-4">{selectedData?.title}</h3>
                 <p className="text-base">
+                {/*  @ts-expect-error */}
                   {selectedData?.description}
                 </p>
               </div>
 
               {/* Image with the circular crop */}
               <img
+                // @ts-expect-error  
                 src={`${selectedData?.image?.data?.attributes?.url}`}
                 className="relative rounded-full w-80 h-80 object-cover z-20 ml-16 transform -translate-x-[-60px]"
               />
