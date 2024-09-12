@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://website.kshopinn.com/
+
+# Sitemaps
+Sitemap: https://website.kshopinn.com/sitemap.xml
