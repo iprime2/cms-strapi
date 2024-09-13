@@ -46,8 +46,8 @@ export const Hero: React.FC<{ dashboard: any[]; initialType: string }> = ({
           {/* Image and Circle Background */}
           <div className="relative w-[650px] flex items-center justify-center">
             <div className="absolute w-80 h-80 bg-rose-700 rounded-full opacity-70 flex flex-col justify-center items-center text-left text-white px-6 z-30 transform -translate-x-[150px]">
-              <h3 className="text-xl font-bold mb-4">{selectedData?.title}</h3>
-              <p className="text-base">{selectedData?.description}</p>
+              <h2 className="text-xl font-bold mb-4">{selectedData?.title}</h2>
+              <h4 className="text-base">{selectedData?.description}</h4>
             </div>
             <img
               src={`${selectedData?.image?.data?.attributes?.url}`}
